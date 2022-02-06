@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
-    Radio radio = new Radio(9,5,100,25);
+    Radio radio = new Radio();
 
     // Тесты переключения радиостанции
 
@@ -18,13 +18,13 @@ class RadioTest {
     @Test //Установка радиостанции выше максимального
     void shouldSetCurrentRadioStationBelowMaxLimit() {
         radio.setCurrentRadioStation(10);
-        assertEquals(5, radio.getCurrentRadioStation());
+        assertEquals(0, radio.getCurrentRadioStation());
     }
 
     @Test //Установка радиостанции ниже минимального
     void shouldSetCurrentRadioStationBelowMinLimit() {
         radio.setCurrentRadioStation(-1);
-        assertEquals(5, radio.getCurrentRadioStation());
+        assertEquals(0, radio.getCurrentRadioStation());
     }
 
     @Test //Переключение радиостанции вниз
