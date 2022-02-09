@@ -63,8 +63,8 @@ class RadioTest {
 
     @Test //Установка радиостанции в максимальном значение
     void shouldSetCurrentRadioStationMaxLimit () {
-        radio.setCurrentRadioStation(0);
-        assertEquals(0, radio.getCurrentRadioStation());
+        radio.setCurrentRadioStation(9);
+        assertEquals(9, radio.getCurrentRadioStation());
     }
 
     // Тест увелечения и уменьшения громкости
