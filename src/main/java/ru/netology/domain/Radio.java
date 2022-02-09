@@ -5,15 +5,15 @@ public class Radio {
 
     public Radio(int numberOfStations) {
         this.numberOfStations = numberOfStations;
-        this.maxStation = numberOfStations - 1;
+        this.maxStation = maxStation;
     }
+
     public Radio() {
     }
 
     private int minStation = 0;
     private int maxStation = numberOfStations - 1;
     private int currentRadioStation;
-
 
     private int minVolume = 0;
     private int maxVolume = 100;
@@ -73,7 +73,7 @@ public class Radio {
         return currentRadioStation;
     }
 
-    public void setCurrentRadioStation (int currentRadioStation) {
+    public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation > maxStation) {
             return;
         }
@@ -88,7 +88,7 @@ public class Radio {
             this.currentRadioStation = maxStation;
             return;
         }
-        this.currentRadioStation --;
+        this.currentRadioStation--;
     }
 
     public void nextRadioStation() {
@@ -96,7 +96,7 @@ public class Radio {
             this.currentRadioStation = minStation;
             return;
         }
-        this.currentRadioStation ++;
+        this.currentRadioStation++;
     }
 
     //Управление громкостью
@@ -117,22 +117,21 @@ public class Radio {
         this.currentVolume = currentVolume;
     }
 
-    public void volumeUpForOne () {
+    public void volumeUpForOne() {
         if (currentVolume > maxVolume) {
             this.currentVolume = maxVolume;
         }
         if (currentVolume < maxVolume) {
-            //currentVolume = currentVolume + 1;
             this.currentVolume++;
         }
     }
 
-    public void volumeDawnOne () {
+    public void volumeDawnOne() {
         if (currentVolume < minVolume) {
-          this.currentVolume = minVolume;
+            this.currentVolume = minVolume;
         }
         if (currentVolume > minVolume) {
-           this.currentVolume --;
+            this.currentVolume--;
         }
     }
 
