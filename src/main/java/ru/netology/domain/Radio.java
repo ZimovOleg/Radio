@@ -1,25 +1,71 @@
 package ru.netology.domain;
 
 public class Radio {
-    private int minNumberRadioStation;
-    private int maxNumberRadioStation = 9;
-    private int currentRadioStation;
-    private int minVolume;
-    private int maxVolume = 100;
-    private int currentVolume;
+    private int numberOfStations = 10;
 
+    public Radio(int numberOfStations) {
+        this.numberOfStations = numberOfStations;
+        this.maxStation = numberOfStations - 1;
+    }
     public Radio() {
     }
 
-    public Radio(int minNumberRadioStation, int maxNumberRadioStation, int currentRadioStation,int minVolume, int maxVolume, int currentVolume) {
-        this.minNumberRadioStation = minNumberRadioStation;
-        this.maxNumberRadioStation = maxNumberRadioStation;
-        this.currentRadioStation = currentRadioStation;
-        this.minVolume = minVolume;
-        this.maxVolume = maxVolume;
-        this.currentVolume = currentVolume;
+    private int minStation = 0;
+    private int maxStation = numberOfStations - 1;
+    private int currentRadioStation;
+
+
+    private int minVolume = 0;
+    private int maxVolume = 100;
+    private int currentVolume = 25;
+
+    public int getNumberOfStations() {
+        return numberOfStations;
     }
 
+    public void setNumberOfStations(int numberOfStations) {
+        this.numberOfStations = numberOfStations;
+    }
+
+    public int getMinStation() {
+        return minStation;
+    }
+
+    public void setMinStation(int minStation) {
+        this.minStation = minStation;
+    }
+
+    public int getMaxStation() {
+        return maxStation;
+    }
+
+    public void setMaxStation(int maxStation) {
+        this.maxStation = maxStation;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
+
+    public void setMinVolume(int minVolume) {
+        this.minVolume = minVolume;
+    }
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public void setMaxVolume(int maxVolume) {
+        this.maxVolume = maxVolume;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int currentVolume) {
+        this.currentVolume = currentVolume;
+    }
 
     //Управление Радиостанцией
 
@@ -28,26 +74,26 @@ public class Radio {
     }
 
     public void setCurrentRadioStation (int currentRadioStation) {
-        if (currentRadioStation > maxNumberRadioStation) {
+        if (currentRadioStation > maxStation) {
             return;
         }
-        if (currentRadioStation < minNumberRadioStation) {
+        if (currentRadioStation < minStation) {
             return;
         }
         this.currentRadioStation = currentRadioStation;
     }
 
     public void prevRadioStation() {
-        if (currentRadioStation <= minNumberRadioStation) {
-            this.currentRadioStation = maxNumberRadioStation;
+        if (currentRadioStation <= minStation) {
+            this.currentRadioStation = maxStation;
             return;
         }
         this.currentRadioStation --;
     }
 
     public void nextRadioStation() {
-        if (currentRadioStation >= maxNumberRadioStation) {
-            this.currentRadioStation = minNumberRadioStation;
+        if (currentRadioStation >= maxStation) {
+            this.currentRadioStation = minStation;
             return;
         }
         this.currentRadioStation ++;
