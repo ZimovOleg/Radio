@@ -1,73 +1,31 @@
 package ru.netology.domain;
 
 public class Radio {
-    private int numberOfStations = 10;
+    private int maxNumberOfStations = 10;
 
-    public Radio(int numberOfStations) {
-        this.numberOfStations = numberOfStations;
-        this.maxStation = maxStation;
+    public Radio(int maxNumberOfStations) {
+        this.maxNumberOfStations = maxNumberOfStations;
+        this.maxStation = maxNumberOfStations - 1;
+    }
+
+    public int getMaxNumberOfStations() {
+        return maxNumberOfStations;
+    }
+    public int getMaxStation() {
+        return maxStation;
     }
 
     public Radio() {
     }
 
     private int minStation = 0;
-    private int maxStation = numberOfStations - 1;
+    private int maxStation = maxNumberOfStations - 1;
     private int currentRadioStation;
-
     private int minVolume = 0;
     private int maxVolume = 100;
     private int currentVolume = 25;
 
-    public int getNumberOfStations() {
-        return numberOfStations;
-    }
-
-    public void setNumberOfStations(int numberOfStations) {
-        this.numberOfStations = numberOfStations;
-    }
-
-    public int getMinStation() {
-        return minStation;
-    }
-
-    public void setMinStation(int minStation) {
-        this.minStation = minStation;
-    }
-
-    public int getMaxStation() {
-        return maxStation;
-    }
-
-    public void setMaxStation(int maxStation) {
-        this.maxStation = maxStation;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public void setMaxVolume(int maxVolume) {
-        this.maxVolume = maxVolume;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentVolume(int currentVolume) {
-        this.currentVolume = currentVolume;
-    }
-
-    //Управление Радиостанцией
+//Управление Радиостанцией
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
